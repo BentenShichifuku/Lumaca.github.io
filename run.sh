@@ -1,1 +1,1 @@
-https://github.com/BentenShichifuku/Lumaca.github.io
+https://bentenshichifuku.github.io/Lumaca.github.io/

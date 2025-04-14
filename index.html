@@ -7,29 +7,166 @@
   <style>
     body {
       font-family: sans-serif;
-      margin: 40px;
+      margin: 0;
       background-color: #f5f5f5;
       color: #333;
     }
+
     h1 {
       font-size: 2em;
       color: #007acc;
     }
+
     a {
       color: #007acc;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    .header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      position: fixed;
+      top: -100px;
+      width: 100%;
+      transition: top 0.3s;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-logo a {
+     333;
+      text-decoration: none;
+    }
+
+    .header-nav {
+      display: flex;
+    }
+
+    .header-menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-menu-item {
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .header-menu-item a {
+      color: #333;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .header-menu-item a:hover {
+      background-color: #007acc;
+      color: #fff;
+    }
+
+    .header-submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      z-index: 1000;
+    }
+
+    .header-submenu-item {
+      margin: 0;
+    }
+
+    .header-submenu-item a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .header-submenu-item a:hover {
+      background-color: #007acc;
+      color: #fff;
+    }
+
+    .header-menu-item:hover .header-submenu {
+      display: block;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('hoge.png') no-repeat center center; #画像捜索中
+      background-size: cover;
+    }
+
+    .content {
+      padding: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>こんにちは、Lumacaです！</h1>
-  <p>これは自分のポートフォリオサイトです。</p>
-  <ul>
-    <li><a href="https://github.com/your-username">GitHub</a></li>
-    <li><a href="mailto:your@email.com">連絡はこちら</a></li>
-  </ul>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="#">My Portfolio</a>
+      </div>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li class="header-menu-item">
+            <a href="#">MENU</a>
+            <ul class="header-submenu">
+              <li class="header-submenu-item"><a href="#">ABOUT US</a></li>
+              <li class="header-submenu-item"><a href="#">WORK EXPERIENCE</a></li>
+              <li class="header-submenu-item"><a href="#">PUBLICATIONS</a></li>
+              <li class="header-submenu-item"><a href="#">PROJECTS</a></li>
+              <li class="header-submenu-item"><a href="#">SCHOOL</a></li>
+              <li class="header-submenu-item"><a href="#">CERTIFICATES</a></li>
+              <li class="header-submenu-item"><a href="#">AWARDS</a></li>
+              <li class="header-submenu-item"><a href="#">CONTACT</a></li>
+              <li class="header-submenu-item"><a href="#">BLOG</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="hero"></div>
+  <div class="content">
+    <h1>こんにちは、Lumacaです！</h1>
+    <p>これは自分のポートフォリオサイトです。</p>
+    <ul>
+      <li><a href="https://github.com/your-username">GitHub</a></li>
+      <li><a href="mailto:your@email.com">連絡はこちら</a></li>
+    </ul>
+  </div>
+  <script>
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.style.top = '0';
+      } else {
+        header.style.top = '-100px';
+      }
+    });
+  </script>
 </body>
 </html>
