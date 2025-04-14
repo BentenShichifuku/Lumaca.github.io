@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    margin: 40px;
+    margin: 0;
     background-color: #f5f5f5;
     color: #333;
   }
@@ -23,6 +23,11 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 1000; /* 追加 */
   }
   
   .header-inner {
@@ -35,7 +40,6 @@ body {
   }
   
   .header-logo a {
-    font-size: 1.5em;
     color: #333;
     text-decoration: none;
   }
@@ -101,3 +105,26 @@ body {
   .header-menu-item:hover .header-submenu {
     display: block;
   }
+  
+  .hero {
+    height: 100vh;
+    background: url('image.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    width: 60%;
+    height: 60%;
+    background: url('lumaca.png') no-repeat center center;
+    background-size: contain;
+    transition: opacity 0.2s;
+  }
+  
+  .content {
+    padding: 40px;
+  }
+  
