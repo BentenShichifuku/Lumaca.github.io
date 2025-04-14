@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>LUMACA TOP</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
               <li class="header-submenu-item"><a href="#">ABOUT US</a></li>
               <li class="header-submenu-item"><a href="#">WORK EXPERIENCE</a></li>
               <li class="header-submenu-item"><a href="#">PUBLICATIONS</a></li>
-              <li class="header-submenu-item"><a href="projects.html">PROJECTS</a></li>
+              <li class="header-submenu-item"><a href="#">PROJECTS</a></li>
               <li class="header-submenu-item"><a href="#">SCHOOL</a></li>
               <li class="header-submenu-item"><a href="#">CERTIFICATES</a></li>
               <li class="header-submenu-item"><a href="#">AWARDS</a></li>
@@ -42,6 +42,12 @@
       <li><a href="https://github.com/your-username">GitHub</a></li>
       <li><a href="mailto:your@email.com">連絡はこちら</a></li>
     </ul>
+    <div class="news-section">
+      <h2 class="news-head">ニュース</h2>
+      <ul class="news-items" id="latest-news">
+        <!-- 最新ニュースがここに表示されます -->
+      </ul>
+    </div>
   </div>
   <script>
     window.addEventListener('scroll', function() {
@@ -55,6 +61,30 @@
         overlay.style.opacity = '1';
       }
     });
+
+    // 最新ニュースを読み込む関数
+    function loadLatestNews() {
+      fetch('../news/news.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.text();
+        })
+        .then(data => {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(data, 'text/html');
+          var newsItems = doc.querySelectorAll('.news-item');
+          var latestNews = document.getElementById('latest-news');
+          for (var i = 0; i < 3; i++) {
+            latestNews.appendChild(newsItems[i].cloneNode(true));
+          }
+        })
+        .catch(error => console.error('Error loading news:', error));
+    }
+
+    // ページ読み込み時に最新ニュースを読み込む
+    window.addEventListener('load', loadLatestNews);
   </script>
 </body>
 </html>
