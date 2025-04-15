@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Links</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="#">LUMACA</a>
+      </div>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li class="header-menu-item">
+            <a href="#">MENU</a>
+            <ul class="header-submenu">
+              <li class="header-submenu-item"><a href="#">ABOUT US</a></li>
+              <li class="header-submenu-item"><a href="#">WORK EXPERIENCE</a></li>
+              <li class="header-submenu-item"><a href="#">PUBLICATIONS</a></li>
+              <li class="header-submenu-item"><a href="#">PROJECTS</a></li>
+              <li class="header-submenu-item"><a href="#">SCHOOL</a></li>
+              <li class="header-submenu-item"><a href="#">CERTIFICATES</a></li>
+              <li class="header-submenu-item"><a href="#">AWARDS</a></li>
+              <li class="header-submenu-item"><a href="#">CONTACT</a></li>
+              <li class="header-submenu-item"><a href="index.html">BLOG</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="content">
+    <h1>Blog Links</h1>
+    <ul id="html-list"></ul>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const htmlsFolder = 'htmls/';
+        const fileNames = ['20241108_1.html', '20241109_1.html', '20241110_1.html']; // 例としてファイル名を列挙
+
+        const listContainer = document.getElementById('html-list');
+
+        fileNames.forEach(fileName => {
+            const listItem = document.createElement('p');
+            const link = document.createElement('a');
+            link.href = htmlsFolder + fileName;
+            link.textContent = fileName;
+            listItem.appendChild(link);
+            listContainer.appendChild(listItem);
+        });
+    });
+  </script>
+</body>
+</html>
