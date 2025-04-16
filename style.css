@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   margin: 0;
-  background-color: #f5f5f5;
+  background-color: #f9f6ec;
   color: #333;
 }
 
@@ -10,10 +10,29 @@ h1 {
   color: #007acc;
 }
 
+h2 {
+  font-family: "Yu Gothic";
+  font-size: 1em;
+}
+
+p {
+  font-family: "Yu Gothic";
+}
+
 a {
   color: #007acc;
   text-decoration: none;
 }
+
+li {
+  font-family: "Yu Gothic";
+  font-size: 1em;
+  font-weight: normal; /* 追加 */
+  text-align: left;
+  margin-left: 30px;
+}
+
+  
 
 a:hover {
   text-decoration: underline;
@@ -176,14 +195,28 @@ a:hover {
   }
 
 .content {
-    width: 50%; /* 幅を画面の50%に設定 */
+    width: 30%; /* 幅を画面の50%に設定 */
     margin: 0 auto; /* 中央寄せ */
     padding: 40px;
     text-align: center; /* テキストを中央寄せ */
 }
 
 .image-block img {
-    width: 25%; /* 画像の幅を25%に設定 */
+    width: 75%; /* 画像の幅を25%に設定 */
     display: block;
     margin: 0 auto; /* 画像を中央寄せ */
+}
+
+.content0 {
+  width: 60%;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.content1 {
+  width: 45%;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
 }
